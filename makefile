@@ -1,9 +1,9 @@
 GCC = gcc
-AR = ar -rcs #creating libs
+AR = ar -rcs
 FLAGS = -Wall -g
 
-make basicClassification.o: basicClassification.c
-	gcc -c basicClassification.c
+basicClassification.o: basicClassification.c
+	$(GCC) $(FLAGS) -c basicClassification.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c
 	$(GCC) $(FLAGS) -c advancedClassificationLoop.c
@@ -12,7 +12,7 @@ advancedClassificationRecusion.o: advancedClassificationRecursion.c
 	$(GCC) $(FLAGS) -c advancedClassificationRecursion.c
 
 main.o: main.c
-	$(GCC) $(FLAGS) -c main.o
+	$(GCC) $(FLAGS) -c main.c
 	
 
 #Static libraries
