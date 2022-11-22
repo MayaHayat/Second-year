@@ -8,7 +8,7 @@ int main(){
 	scanf("%d", &large);
 	
 	
-	printf("\nThe Armstrong numbers are:");
+	printf("The Armstrong numbers are:");
 	for (int i = small; i <=large; i++)
 		if (isArmstrong(i)) 
 			printf(" %d", i);
