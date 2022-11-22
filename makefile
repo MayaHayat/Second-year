@@ -1,8 +1,6 @@
 GCC = gcc
-AR = ar #creating libs
+AR = ar -rcs
 FLAGS = -Wall -g
-OBJECTS_Main=main.o
-OBJECTS_LIB=NumClass.o
 
 basicClassification.o: basicClassification.c
 	$(GCC) $(FLAGS) -c basicClassification.c
@@ -13,8 +11,8 @@ advancedCalssificationLoop.o: advancedClassificationLoop.c
 advancedCalssificationRecusion.o: advancedClassificationRecursion.c
 	$(GCC) $(FLAGS) -c advancedClassificationRecursion.c
 
-main.o: main.c NumClass.h
-	$(GCC) $(FLAGS) -c main.o
+main.o: main.c
+	$(GCC) $(FLAGS) -c main.c
 	
 
 #Static libraries
