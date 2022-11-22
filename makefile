@@ -20,11 +20,11 @@ main.o: main.c NumClass.h
 #Static libraries
 
 loops: libclassloops.a
-libclassloops.a: basicClassification.o advancedClassificationLoop.o
+libclassloops.a: basicClassification.o advancedClassificationLoop.o 
 	$(AR) -rcs libvlassloops.a basicClassification.o advancedClassificationLoop.o
 	
 recursives: libclassrec.a
-libclassrec.a: advancedClassificationRecursion.o
+libclassrec.a: advancedClassificationRecursion.o 
 	$(AR) -rcs libclassrec.a advancedClassificationRecursion.o
 	
 	
@@ -32,11 +32,11 @@ libclassrec.a: advancedClassificationRecursion.o
 
 recursived: libclassrec.so
 libclassrec.so: basicClassification.o advancedClassificationRecursion.o
-	$(GCC) $(FLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o
+	$(GCC) $(FLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o -lm
 	
 looped: libclassloops.so
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
-	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o
+	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o -lm
 
 #mains
 

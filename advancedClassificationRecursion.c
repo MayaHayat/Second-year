@@ -13,5 +13,20 @@ int digCount(int n){
 }
 
 int isArmstrong(int n){
+    int temp = n, power = digCount(n);
+    if(n == isArmstrongHelp(n,power)) 
+        return 1;
+    return 0;
     
+}
+
+int reverseHelp(int n, int help){
+    if (n==0) return help;
+    help = help*10 + n%10;
+    return (reverse(n/10, help));
+}
+
+int isPalindrome(int n){
+    if (n== reverseHelp(n/10, 0)) return 1;
+    return 0;
 }
