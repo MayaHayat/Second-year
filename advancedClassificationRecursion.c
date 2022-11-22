@@ -3,12 +3,12 @@
 
 int isArmstrongHelp(int n, int power){
     if (n>0) 
-        return pow(n%10,power + isArmstrongHelp(n/10, power));
+        return pow(n%10,power) + isArmstrongHelp(n/10, power);
     return 0;
 }
 
 int digCount(int n){
-    if (n> 0 && n< 10) return 1;
+    if (n=> 0 && n< 10) return 1;
     return (1+ digCount(n/10));
 }
 
@@ -27,7 +27,7 @@ int reverseHelp(int n, int help){
 }
 
 int isPalindrome(int n){
-    if (n== reverseHelp(n, 0)) return 1;
-    return 0;
+    if (reverseHelp(n,0)== n) return 1;
+    else return 0;
 }
 
