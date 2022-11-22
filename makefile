@@ -54,4 +54,3 @@ all: mains mainloop maindrec
 clean: 
 	rm -f *.o *.a *.so mains mainloop maindrec
 
-
