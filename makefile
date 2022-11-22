@@ -1,18 +1,18 @@
 GCC = gcc
-AR = ar -rcs
+AR = ar -rcs #creating libs
 FLAGS = -Wall -g
 
-basicClassification.o: basicClassification.c
-	$(GCC) $(FLAGS) -c basicClassification.c
+make basicClassification.o: basicClassification.c
+	gcc -c basicClassification.c
 
-advancedCalssificationLoop.o: advancedClassificationLoop.c
+advancedClassificationLoop.o: advancedClassificationLoop.c
 	$(GCC) $(FLAGS) -c advancedClassificationLoop.c
 
-advancedCalssificationRecusion.o: advancedClassificationRecursion.c
+advancedClassificationRecusion.o: advancedClassificationRecursion.c
 	$(GCC) $(FLAGS) -c advancedClassificationRecursion.c
 
 main.o: main.c
-	$(GCC) $(FLAGS) -c main.c
+	$(GCC) $(FLAGS) -c main.o
 	
 
 #Static libraries
@@ -51,4 +51,5 @@ all: loops looped recursived recursives mains maindloop maindrec
 
 clean: 
 	rm -f *.o *.a *.so mains mainloop maindrec
+
 
