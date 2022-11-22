@@ -49,7 +49,7 @@ maindloop: main.o libclassloops.so
 maindrec: main.o libclassrec.so
 	$(GCC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
 
-all: mains mainloop maindrec
+all: mains maindloop maindrec
 
 clean: 
 	rm -f *.o *.a *.so mains mainloop maindrec
