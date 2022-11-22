@@ -27,7 +27,7 @@ int reverseHelp(int n, int help){
 }
 
 int isPalindrome(int n){
-    if (n== reverseHelp(n/10, 0)) return 1;
+    if (n== reverseHelp(n, 0)) return 1;
     return 0;
 }
 
