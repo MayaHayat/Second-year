@@ -28,6 +28,6 @@ int reverseHelp(int n, int help){
 
 int isPalindrome(int n){
     if (reverseHelp(n,0)== n) return 1;
-    else return 0;
+    return 0;
 }
 
