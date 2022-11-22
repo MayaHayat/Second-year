@@ -1,5 +1,5 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
 
 int isArmstrongHelp(int n, int power){
     if (n>0) 
@@ -23,10 +23,11 @@ int isArmstrong(int n){
 int reverseHelp(int n, int help){
     if (n==0) return help;
     help = help*10 + n%10;
-    return (reverse(n/10, help));
+    return (reverseHelp(n/10, help));
 }
 
 int isPalindrome(int n){
     if (n== reverseHelp(n/10, 0)) return 1;
     return 0;
 }
+

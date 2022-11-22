@@ -19,11 +19,13 @@ main.o: main.c
 
 loops: libclassloops.a
 libclassloops.a: basicClassification.o advancedClassificationLoop.o 
-	$(AR) -rcs libvlassloops.a basicClassification.o advancedClassificationLoop.o
+	$(AR) libclassloops.a basicClassification.o advancedClassificationLoop.o
+	ranlib libclassloops.a
 	
 recursives: libclassrec.a
-libclassrec.a: advancedClassificationRecursion.o 
-	$(AR) -rcs libclassrec.a advancedClassificationRecursion.o
+libclassrec.a: basicClassification.o advancedClassificationRecursion.o 
+	$(AR) libclassrec.a basicClassification.o advancedClassificationRecursion.o
+	ranlib libclassrec.a
 	
 	
 #Dynamic libraries
@@ -32,24 +34,24 @@ recursived: libclassrec.so
 libclassrec.so: basicClassification.o advancedClassificationRecursion.o
 	$(GCC) $(FLAGS) -shared -o libclassrec.so basicClassification.o advancedClassificationRecursion.o -lm
 	
-looped: libclassloops.so
+loopd: libclassloops.so
 libclassloops.so: basicClassification.o advancedClassificationLoop.o
 	$(GCC) $(FLAGS) -shared -o libclassloops.so basicClassification.o advancedClassificationLoop.o -lm
 
 #mains
 
 mains: main.o libclassrec.a
-	$(GCC) $(FLAGS) -o mains main.o ./libclassrec.o -lm
+	$(GCC) $(FLAGS) main.o libclassrec.a -o mains -lm
 
 maindloop: main.o libclassloops.so
-	$(GCC) $(FLAGS) -o maindloop main.o ./libclassloops.so -lm
+	$(GCC) $(FLAGS) main.o ./libclassloops.so -o maindloop -lm
 
-maindrec: main.o libclassrec.so
-	$(GCC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
+maindrec: main.o libclassrec.so 
+	$(GCC) $(FLAGS)  main.o ./libclassrec.so -o maindrec -lm
 
-all: loops looped recursived recursives mains maindloop maindrec
+all: loops loopd recursived recursives mains maindloop maindrec
 
 clean: 
 	rm -f *.o *.a *.so mains mainloop maindrec
 
-
+.PHONY: all clean loopd loops recursived recursives

@@ -2,16 +2,11 @@
 #include "NumClass.h"
 
 int main(){
-	int x,y=0;
+	int small, large=0;
 	
-	int small = scanf("%d", x);
-	int large = scanf("%d", y);
+	scanf("%d", &small);
+	scanf("%d", &large);
 	
-	if (large < small){
-		int temp = large;
-		large = small;
-		small = large;
-	}
 	
 	printf("\nThe Armstrong numbers are:");
 	for (int i = small; i <=large; i++)
@@ -37,7 +32,3 @@ int main(){
 			printf(" %d", i);
 	
 }
-	
-	
-	
-	 

@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include<math.h>
+
+#include <stdio.h>
+#include <math.h>
 
 int isPalindrome(int n){
 	int reversed = 0, temp =n;
