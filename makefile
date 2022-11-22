@@ -6,10 +6,10 @@ basicClassification.o: basicClassification.c
 	$(GCC) $(FLAGS) -c basicClassification.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c
-	$(GCC) $(FLAGS) -c advancedClassificationLoop.c
+	$(GCC) $(FLAGS) -fPIC -c advancedClassificationLoop.c
 
 advancedClassificationRecusion.o: advancedClassificationRecursion.c
-	$(GCC) $(FLAGS) -c advancedClassificationRecursion.c
+	$(GCC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c
 
 main.o: main.c
 	$(GCC) $(FLAGS) -c main.c
