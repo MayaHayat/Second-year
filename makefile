@@ -12,7 +12,7 @@ advancedClassificationRecusion.o: advancedClassificationRecursion.c NumClass.h
 	$(GCC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c
 
 main.o: main.c NumClass.h
-	$(GCC) $(FLAGS) -c main.c
+	$(GCC) $(FLAGS) -fPIC -c main.c
 	
 
 #Static libraries
