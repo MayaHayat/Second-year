@@ -2,16 +2,16 @@ GCC = gcc
 AR = ar -rcs
 FLAGS = -Wall -g
 
-basicClassification.o: basicClassification.c
-	$(GCC) $(FLAGS) -c basicClassification.c
+basicClassification.o: basicClassification.c NumClass.h
+	$(GCC) $(FLAGS) -fPIC -c basicClassification.c
 
-advancedClassificationLoop.o: advancedClassificationLoop.c
+advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 	$(GCC) $(FLAGS) -fPIC -c advancedClassificationLoop.c
 
-advancedClassificationRecusion.o: advancedClassificationRecursion.c
+advancedClassificationRecusion.o: advancedClassificationRecursion.c NumClass.h
 	$(GCC) $(FLAGS) -fPIC -c advancedClassificationRecursion.c
 
-main.o: main.c
+main.o: main.c NumClass.h
 	$(GCC) $(FLAGS) -c main.c
 	
 
@@ -52,6 +52,6 @@ maindrec: main.o libclassrec.so
 all: loops loopd recursived recursives mains maindloop maindrec
 
 clean: 
-	rm -f *.o *.a *.so mains mainloop maindrec
+	rm -f *.o *.a *.so mains maindloop maindrec
 
 .PHONY: all clean loopd loops recursived recursives
